@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Nav />
-      <Header />
+
       <div className="max-w-5xl mx-auto">
         <CarouselComp />
       </div>

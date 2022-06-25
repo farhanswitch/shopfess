@@ -1,11 +1,10 @@
 import { FC } from "react";
-import Image from "next/image";
 
 const BottomMenu: FC = () => {
   return (
-    <section className="bottom-menu bg-blue-600 w-full text-white">
-      <div className="container grid grid-cols-1 md:grid-cols-2 justify-between px-4 md:px-0 py-4 max-w-5xl mx-auto">
-        <div className="left flex flex-col items-center ">
+    <section className="bottom-menu bg-blue-800 w-full text-white">
+      <div className="container flex flex-col md:flex-row gap-4 justify-between px-0 py-4 max-w-5xl mx-auto">
+        <div className="left flex flex-col w-2/3 mx-auto items-center md:items-start md:w-fit">
           <h3 className="font-semibold mb-2 text-lg">Menu</h3>
           <ul>
             <li>
@@ -22,10 +21,10 @@ const BottomMenu: FC = () => {
             </li>
           </ul>
         </div>
-        <div className="right flex flex-col items-center">
+        <div className="right flex flex-col w-2/3 mx-auto items-center md:items-start md:w-fit">
           <h3 className="font-semibold  mb-2 text-lg">Downloads Apps</h3>
           <p>Download our mobile app and get awesome offers</p>
-          <div className="store flex gap-2">
+          <div className="store flex flex-col md:flex-row gap-2">
             <img
               className="cursor-pointer"
               src="/app-store.png"
