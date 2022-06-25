@@ -6,8 +6,8 @@ const Nav: FC = () => {
       <div className="container-nav max-w-5xl mx-auto flex justify-between items-center px-4 py-2">
         <div className="brand">Shopfess</div>
         <div className="search-input relative flex gap-4">
-          <button className="text-blue-700">
-            <span className="hover:-translate-y-1 duration-300 block">
+          <button className="text-blue-700 group">
+            <span className="group-hover:-translate-y-1 duration-300 block">
               Categories
             </span>
           </button>
@@ -22,12 +22,7 @@ const Nav: FC = () => {
             </span>
           </div>
         </div>
-        <div className="buttons flex items-center gap-4">
-          <button className="text-blue-700">
-            <span className="block hover:-translate-y-1 duration-300">
-              Login
-            </span>
-          </button>
+        <div className="buttons flex items-center">
           <img src="/bag.svg" alt="cart" className="block w-6 h-6" />
         </div>
       </div>
