@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import CarouselComp from "../components/CarouselComp";
 import TopProducts from "../components/TopProducts";
 import BottomMenu from "../components/BottomMenu";
+import Footer from "../components/Footer";
 const Home: NextPage = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       </div>
       <TopProducts />
       <BottomMenu />
+      <Footer />
     </div>
   );
 };
