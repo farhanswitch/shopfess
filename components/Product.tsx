@@ -1,22 +1,26 @@
 import { FC } from "react";
 import Image from "next/image";
-const Product: FC = () => {
+import { CartItemType } from "../src/models/CartItem";
+
+type ProductProps = {
+  product: CartItemType;
+};
+const Product: FC<ProductProps> = ({ product }) => {
   return (
-    <div className="h-full pt-8 pb-2">
+    <div className="h-full pt-8 pb-14 relative">
       <div className="w-full">
-        <Image
-          src="/payment-method.webp"
-          layout="responsive"
+        <img
+          src={product.image}
           height="250"
           width="400"
-          className="max-h-[250px] block mx-auto"
+          className="h-[250px] w-[60%] block mx-auto"
         />
       </div>
       <div className="pl-4">
-        <h3 className="text-slate-800 my-2">Product's name</h3>
-        <p className="text-blue-800 my-1">$ 99</p>
+        <h3 className="text-slate-800 my-2">{product.title}</h3>
+        <p className="text-blue-800 my-1">${product.price}</p>
       </div>
-      <button className="bg-sky-600 hover:bg-sky-500 text-white w-4/5 block mt-8 mx-auto px-1 py-2 rounded">
+      <button className="bg-sky-600 hover:bg-sky-500 text-white w-4/5 block mt-8 mx-auto px-1 py-2 rounded absolute bottom-2 left-1/2 -translate-x-1/2">
         Add To Cart
       </button>
     </div>
