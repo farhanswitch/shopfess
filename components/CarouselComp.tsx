@@ -15,28 +15,28 @@ const CarouselComp: FC = () => {
       >
         <div className="bg-blue-900/70">
           <img
-            className="block max-h-[400px] max-w-3xl"
+            className="block max-h-[300px] max-w-2xl"
             src="/80-banner.jpg"
             alt="discount 80%"
           />
         </div>
         <div className="bg-blue-900/70">
           <img
-            className="max-h-[400px] max-w-3xl"
+            className="max-h-[300px] max-w-2xl"
             src="/free-shipping-banner.jpg"
             alt="free shipping"
           />
         </div>
         <div className="bg-blue-900/70">
           <img
-            className="max-h-[400px] max-w-3xl"
+            className="max-h-[300px] max-w-2xl"
             src="/payment-method.webp"
             alt="payment method"
           />
         </div>
         <div className="bg-blue-900/70">
           <img
-            className="max-h-[400px] max-w-3xl"
+            className="max-h-[300px] max-w-2xl"
             src="/sale-discount-banner.jpg"
             alt="sale"
           />
