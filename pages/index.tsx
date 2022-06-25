@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import CarouselComp from "../components/CarouselComp";
 import TopProducts from "../components/TopProducts";
-
+import BottomMenu from "../components/BottomMenu";
 const Home: NextPage = () => {
   return (
     <div>
@@ -13,6 +13,7 @@ const Home: NextPage = () => {
         <CarouselComp />
       </div>
       <TopProducts />
+      <BottomMenu />
     </div>
   );
 };
