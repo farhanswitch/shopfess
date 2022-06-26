@@ -1,10 +1,13 @@
-import { FC, useState } from "react";
+import { FC, useState, useMemo } from "react";
+import useGlobalContext from "../src/hooks/useGlobalContext";
+import { CartItemType } from "../src/models/CartItem";
 
-type NavProps = {
-  totalItems: number;
-  handleOpenDrawer: () => void;
-};
-const Nav: FC<NavProps> = ({ totalItems, handleOpenDrawer }) => {
+const Nav: FC = () => {
+  const { cartItems, handleOpenDrawer } = useGlobalContext();
+  const getTotalItems = (items: CartItemType[]) =>
+    items.reduce((acc: number, item) => acc + item.amount, 0);
+  const totalItems = useMemo(() => getTotalItems(cartItems), [cartItems]);
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const handleOpenMenu = () => setIsMenuOpen(!isMenuOpen);
   return (

@@ -1,15 +1,12 @@
 import { FC } from "react";
 import Product from "./Product";
 import { CartItemType } from "../src/models/CartItem";
-
+import useGlobalContext from "../src/hooks/useGlobalContext";
 type TopProductsProps = {
   listTopProducts: CartItemType[];
-  handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => void;
 };
-const TopProducts: FC<TopProductsProps> = ({
-  listTopProducts,
-  handleAddToCart,
-}) => {
+const TopProducts: FC<TopProductsProps> = ({ listTopProducts }) => {
+  const { handleAddToCart } = useGlobalContext();
   return (
     <section className="top-products max-w-5xl mx-auto pt-6">
       <div className="title flex justify-between px-4">

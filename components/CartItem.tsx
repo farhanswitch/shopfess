@@ -1,17 +1,12 @@
 import { FC } from "react";
 import { CartItemType } from "../src/models/CartItem";
-
+import useGlobalContext from "../src/hooks/useGlobalContext";
 type CartItemProps = {
   item: CartItemType;
-  handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => void;
-  handleRemoveFromCart: (id: number) => void;
 };
 
-const CartItem: FC<CartItemProps> = ({
-  item,
-  handleAddToCart,
-  handleRemoveFromCart,
-}) => {
+const CartItem: FC<CartItemProps> = ({ item }) => {
+  const { handleAddToCart, handleRemoveFromCart } = useGlobalContext();
   return (
     <div className="flex flex-col justify-between border-b border-blue-700 pb-[20px]">
       <h3 className="text-md text-slate-800 text-center my-2">{item.title}</h3>
