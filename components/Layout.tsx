@@ -15,7 +15,7 @@ const Layout: FC<LayoutProps> = ({ children, pageTitle }) => {
   return (
     <main className="layout">
       <Head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta name="keywords" content="shopping, clothing,jewelry,e-commerce" />
         <meta name="author" content="Muhammad Farhan" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

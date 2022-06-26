@@ -1,6 +1,6 @@
-import { createContext, useContext } from "react";
-import { CartItemType } from "../src/models/CartItem";
-import type { ContextStateType } from "../src/models/ContextValue";
+import { createContext } from "react";
+import { CartItemType } from "../models/CartItem";
+import type { ContextStateType } from "../models/ContextValue";
 
 const state = {
   isMenuOpen: false,
@@ -10,7 +10,7 @@ const state = {
   cartItems: [],
   setCartItems: () => {},
   handleOpenDrawer: () => {},
-  handleAddToCart: (clickedItem: CartItemType, addAmount: number) => {
+  handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => {
     console.log(`${clickedItem}${addAmount}`);
   },
   handleRemoveFromCart: (id: number) => {

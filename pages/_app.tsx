@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "../styles/typing.css";
 import type { AppProps } from "next/app";
-import AppContext from "../components/AppContext";
+import AppContext from "../src/utilities/AppContext";
 import { CartItemType } from "../src/models/CartItem";
 import { useState } from "react";
 function MyApp({ Component, pageProps }: AppProps) {
