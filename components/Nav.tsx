@@ -2,8 +2,9 @@ import { FC, useState } from "react";
 
 type NavProps = {
   totalItems: number;
+  handleOpenDrawer: () => void;
 };
-const Nav: FC<NavProps> = ({ totalItems }) => {
+const Nav: FC<NavProps> = ({ totalItems, handleOpenDrawer }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const handleOpenMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
@@ -54,7 +55,10 @@ const Nav: FC<NavProps> = ({ totalItems }) => {
             </span>
           </div>
         </div>
-        <div className="button md:order-3 flex items-center relative px-8 py-4">
+        <div
+          className="button md:order-3 flex items-center relative px-8 py-4"
+          onClick={handleOpenDrawer}
+        >
           <img src="/ios-cart.svg" alt="cart" className="block w-7 h-7" />
           <div className="w-6 h-6 text-xs rounded-full grid place-items-center bg-blue-800 text-white absolute top-0 right-2">
             {totalItems}
