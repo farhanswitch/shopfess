@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
+import { useAuth } from "../components/AppContext";
 import type { GetStaticProps, NextPage } from "next";
 import Nav from "../components/Nav";
 import CarouselComp from "../components/CarouselComp";
@@ -24,9 +25,7 @@ type AppIndexProps = {
   productData: CartItemType[];
 };
 const Home: NextPage<AppIndexProps> = ({ productData }) => {
-  const [cartItems, setCartItems] = useState<[] | CartItemType[]>([]);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  const { cartItems, setCartItems, isDrawerOpen, setIsDrawerOpen } = useAuth();
   useMemo(() => console.log(productData), [productData]);
   let listTopProducts = [];
   for (let x = 0; x < 6; x++) {
@@ -36,7 +35,7 @@ const Home: NextPage<AppIndexProps> = ({ productData }) => {
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((acc: number, item) => acc + item.amount, 0);
   const totalItems = useMemo(() => getTotalItems(cartItems), [cartItems]);
-  const handleOpenDrawer = () => setIsOpen(!isOpen);
+  const handleOpenDrawer = () => setIsDrawerOpen(!isDrawerOpen);
   const handleAddToCart = (
     clickedItem: CartItemType,
     addAmount: number = 1
@@ -71,7 +70,7 @@ const Home: NextPage<AppIndexProps> = ({ productData }) => {
   return (
     <div>
       <Nav handleOpenDrawer={handleOpenDrawer} totalItems={totalItems} />
-      <Drawer isOpen={isOpen}>
+      <Drawer isOpen={isDrawerOpen}>
         <Cart
           cartItems={cartItems}
           handleAddToCart={handleAddToCart}
