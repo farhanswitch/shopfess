@@ -60,7 +60,11 @@ const Nav: FC<NavProps> = ({ totalItems, handleOpenDrawer }) => {
           onClick={handleOpenDrawer}
         >
           <img src="/ios-cart.svg" alt="cart" className="block w-7 h-7" />
-          <div className="w-6 h-6 text-xs rounded-full grid place-items-center bg-blue-800 text-white absolute top-0 right-2">
+          <div
+            className={`w-6 h-6 text-xs rounded-full ${
+              totalItems === 0 ? "hidden" : "grid"
+            } place-items-center bg-blue-800 text-white absolute top-0 right-2`}
+          >
             {totalItems}
           </div>
         </div>
