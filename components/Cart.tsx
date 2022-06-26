@@ -16,7 +16,7 @@ const Cart: FC<CartProps> = ({
   handleOpenDrawer,
 }) => (
   <aside className="w-full pt-4 p-[20px]">
-    <div className="title flex items-center justify-between">
+    <div className="title flex items-center justify-between mb-6">
       <button onClick={handleOpenDrawer} className="text-blue-800">
         Close
       </button>

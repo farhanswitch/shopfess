@@ -8,7 +8,7 @@ const Nav: FC<NavProps> = ({ totalItems, handleOpenDrawer }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const handleOpenMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
-    <nav className="w-full bg-white/60 backdrop-blur-md sticky top-0 z-[9] shadow-lg">
+    <nav className="w-full bg-white/70 backdrop-blur-md sticky top-0 z-[9] shadow-lg">
       <div className="container-nav max-w-5xl mx-auto flex flex-wrap gap-3 justify-between items-center px-4 py-2">
         <div
           className="more grid place-items-center block md:hidden"
@@ -20,12 +20,12 @@ const Nav: FC<NavProps> = ({ totalItems, handleOpenDrawer }) => {
             className="w-6 h-6"
           />
         </div>
-        <div className="brand w-[100px]">
+        <div className="brand w-[100px] pl-4">
           <p className="max-w-fit">
-            <span className="text_1 max-w-fit font-semibold bg-gradient-to-tr from-violet-600 via-sky-500 to-blue-600 text-transparent bg-clip-text">
+            <span className="text_1 max-w-fit font-semibold bg-gradient-to-tr from-violet-600 via-sky-500 to-blue-600 text-transparent bg-clip-text text-xl">
               Shopfess.
             </span>
-            <span className="text_2 max-w-fit font-semibold bg-gradient-to-bl from-purple-700 via-violet-500 to-blue-500 text-transparent bg-clip-text">
+            <span className="text_2 max-w-fit font-semibold bg-gradient-to-bl from-purple-700 via-violet-500 to-blue-500 text-transparent bg-clip-text text-xl">
               Shopfess.
             </span>
           </p>
@@ -56,7 +56,7 @@ const Nav: FC<NavProps> = ({ totalItems, handleOpenDrawer }) => {
           </div>
         </div>
         <div
-          className="button md:order-3 flex items-center relative px-8 py-4"
+          className="button md:order-3 flex items-center relative pr-8 py-4"
           onClick={handleOpenDrawer}
         >
           <img src="/ios-cart.svg" alt="cart" className="block w-7 h-7" />
