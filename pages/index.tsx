@@ -7,7 +7,7 @@ import { CartItemType } from "../src/models/CartItem";
 import { getProducts } from "../src/utilities/getProducts";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const productData = await getProducts();
+  const productData = await getProducts("?limit=6");
   return {
     props: {
       productData,
@@ -18,21 +18,16 @@ export const getStaticProps: GetStaticProps = async () => {
 type AppIndexProps = {
   productData: CartItemType[];
 };
-const Home: NextPage<AppIndexProps> = ({ productData }) => {
-  useMemo(() => console.log(productData), [productData]);
-  let listTopProducts = [];
-  for (let x = 0; x < 6; x++) {
-    listTopProducts.push(productData[x]);
-  }
 
+const Home: NextPage<AppIndexProps> = ({ productData }) => {
   return (
     <>
-      <Layout>
+      <Layout pageTitle="Shopfess | Home">
         <>
           <div className="max-w-5xl mx-auto">
             <CarouselComp />
           </div>
-          <TopProducts listTopProducts={listTopProducts} />
+          <TopProducts listTopProducts={productData} />
         </>
       </Layout>
     </>

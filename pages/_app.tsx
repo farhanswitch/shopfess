@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "../src/styles/typing.css";
+import "../styles/typing.css";
 import type { AppProps } from "next/app";
 import AppContext from "../components/AppContext";
 import { CartItemType } from "../src/models/CartItem";
