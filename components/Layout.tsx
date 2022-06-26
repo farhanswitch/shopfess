@@ -19,7 +19,7 @@ const Layout: FC<LayoutProps> = ({ children, pageTitle }) => {
         <meta name="keywords" content="shopping, clothing,jewelry,e-commerce" />
         <meta name="author" content="Muhammad Farhan" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta name="description" content="e-commerce website" />
         <title>{pageTitle}</title>
       </Head>
