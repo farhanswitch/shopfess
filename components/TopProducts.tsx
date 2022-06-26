@@ -4,8 +4,12 @@ import { CartItemType } from "../src/models/CartItem";
 
 type TopProductsProps = {
   listTopProducts: CartItemType[];
+  handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => void;
 };
-const TopProducts: FC<TopProductsProps> = ({ listTopProducts }) => {
+const TopProducts: FC<TopProductsProps> = ({
+  listTopProducts,
+  handleAddToCart,
+}) => {
   return (
     <section className="top-products max-w-5xl mx-auto pt-6">
       <div className="title flex justify-between px-4">
@@ -19,7 +23,7 @@ const TopProducts: FC<TopProductsProps> = ({ listTopProducts }) => {
               key={product.id}
               className="flex flex-col w-full h-full justify-between border border-slate-200 rounded-xl shadow-md "
             >
-              <Product product={product} />
+              <Product product={product} handleAddToCart={handleAddToCart} />
             </div>
           );
         })}

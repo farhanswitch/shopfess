@@ -1,6 +1,9 @@
 import { FC, useState } from "react";
 
-const Nav: FC = () => {
+type NavProps = {
+  totalItems: number;
+};
+const Nav: FC<NavProps> = ({ totalItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const handleOpenMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
@@ -51,8 +54,11 @@ const Nav: FC = () => {
             </span>
           </div>
         </div>
-        <div className="button md:order-3 flex items-center">
-          <img src="/ios-cart.svg" alt="cart" className="block w-6 h-6" />
+        <div className="button md:order-3 flex items-center relative px-8 py-4">
+          <img src="/ios-cart.svg" alt="cart" className="block w-7 h-7" />
+          <div className="w-6 h-6 text-xs rounded-full grid place-items-center bg-blue-800 text-white absolute top-0 right-2">
+            {totalItems}
+          </div>
         </div>
       </div>
     </nav>
