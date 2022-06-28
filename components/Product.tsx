@@ -1,12 +1,12 @@
 import { FC } from "react";
 import Image from "next/image";
 import { CartItemType } from "../src/models/CartItem";
-
+import useGlobalContext from "../src/hooks/useGlobalContext";
 type ProductProps = {
   product: CartItemType;
-  handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => void;
 };
-const Product: FC<ProductProps> = ({ product, handleAddToCart }) => {
+const Product: FC<ProductProps> = ({ product }) => {
+  const { handleAddToCart } = useGlobalContext();
   return (
     <div className="h-full pt-8 pb-14 relative">
       <div className="w-full">
@@ -14,7 +14,7 @@ const Product: FC<ProductProps> = ({ product, handleAddToCart }) => {
           src={product.image}
           height="250"
           width="400"
-          className="h-[250px] w-[60%] block mx-auto"
+          className=" h-[200px] sm:h-[220px] w-[40vw]  md:w-[50%] block mx-auto"
         />
       </div>
       <div className="pl-4">
