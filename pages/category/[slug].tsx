@@ -1,4 +1,5 @@
 import type { GetStaticPaths, NextPage } from "next";
+import Link from "next/link";
 import Product from "../../components/Product";
 import Layout from "../../components/Layout";
 import { CartItemType } from "../../src/models/CartItem";
@@ -54,7 +55,9 @@ const CategoryDetail: NextPage<CategoryDetailProps> = ({
       <section className="all-products max-w-5xl mx-auto pt-6">
         <div className="title flex justify-between px-4">
           <h2 className="text-xl capitalize">{slug}</h2>
-          <button className="text-blue-800">All Category</button>
+          <Link href={"/category"}>
+            <button className="text-blue-800">All Category</button>
+          </Link>
         </div>
         <div className="grid-container grid grid-cols-1 md:grid-cols-3 gap-4 px-6 py-8">
           {productData.map((product) => {

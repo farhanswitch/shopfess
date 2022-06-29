@@ -32,7 +32,9 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
           />
           <div className="title-header relative pb-[7rem] w-full sm:w-2/3 pt-6">
             <h1 className="mb-6 text-center">{product["title"]}</h1>
-            <p className="text-blue-700 text-center">${product["price"]}</p>
+            <p className="text-blue-700 text-center">
+              ${(product["price"] * amount).toFixed(2)}
+            </p>
 
             <div className="action w-full absolute bottom-4 grid grid-cols-1 md:grid-cols-2 gap-6 ">
               <div className="plusMin flex gap-8 items-center justify-center mx-auto w-fit">

@@ -1,14 +1,23 @@
 import { FC } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { CartItemType } from "../src/models/CartItem";
 import useGlobalContext from "../src/hooks/useGlobalContext";
 type ProductProps = {
   product: CartItemType;
 };
 const Product: FC<ProductProps> = ({ product }) => {
+  const router = useRouter();
   const { handleAddToCart } = useGlobalContext();
   return (
-    <div className="h-full pt-8 pb-14 relative">
+    <div
+      onClick={() =>
+        router.push(
+          `/product/${product["title"].split(" ")[0]}-${product["id"]}`
+        )
+      }
+      className="h-full pt-8 pb-14 relative"
+    >
       <div className="w-full">
         <img
           src={product.image}

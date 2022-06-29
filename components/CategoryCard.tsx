@@ -1,5 +1,5 @@
 import { FC } from "react";
-
+import { useRouter } from "next/router";
 const icons = {
   jewelery: "/jewelry.jpg",
   "men's clothing": "/men-shirt.png",
@@ -10,8 +10,13 @@ type CategoryCardProps = {
   title: string;
 };
 const CategoryCard: FC<CategoryCardProps> = ({ title }) => {
+  const router = useRouter();
+  const slug = title.includes(" ") ? title.split(" ").join("-") : title;
   return (
-    <div className="category-card min-w-[250px] max-w-[350px] mx-auto my-3 flex gap-2 items-center px-4 py-2 shadow hover:shadow-none border border-slate-200 duration-300 rounded cursor-pointer">
+    <div
+      onClick={() => router.push(`/category/${slug}`)}
+      className="category-card min-w-[250px] max-w-[350px] mx-auto my-3 flex gap-2 items-center px-4 py-2 shadow hover:shadow-none border border-slate-200 duration-300 rounded cursor-pointer"
+    >
       <img
         src={icons[title as keyof object]}
         alt={title}

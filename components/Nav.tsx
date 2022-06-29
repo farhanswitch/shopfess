@@ -1,8 +1,10 @@
 import { FC, useState, useMemo } from "react";
+import { useRouter } from "next/router";
 import useGlobalContext from "../src/hooks/useGlobalContext";
 import { CartItemType } from "../src/models/CartItem";
 
 const Nav: FC = () => {
+  const router = useRouter();
   const { cartItems, handleOpenDrawer } = useGlobalContext();
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((acc: number, item) => acc + item.amount, 0);
@@ -24,7 +26,10 @@ const Nav: FC = () => {
           />
         </div>
         <div className="brand w-[100px] pl-4">
-          <p className="max-w-fit">
+          <p
+            className="max-w-fit cursor-pointer"
+            onClick={() => router.push("/")}
+          >
             <span className="text_1 max-w-fit font-semibold bg-gradient-to-tr from-violet-600 via-sky-500 to-blue-600 text-transparent bg-clip-text text-xl">
               Shopfess.
             </span>
@@ -34,11 +39,14 @@ const Nav: FC = () => {
           </p>
         </div>
         <div
-          className={`search-input order-3 w-screen md:w-fit relative flex items-center justify-between px-6  gap-4 ${
+          className={`md:flex search-input order-3 w-screen md:w-fit relative flex items-center justify-between md:justify-center px-6  gap-4 ${
             isMenuOpen ? "flex" : "hidden"
           }`}
         >
-          <button className="text-blue-700 group">
+          <button
+            className="text-blue-700 group"
+            onClick={() => router.push("/category")}
+          >
             <span className="group-hover:-translate-y-1 duration-300 block">
               Categories
             </span>
@@ -48,7 +56,7 @@ const Nav: FC = () => {
             placeholder="Search product"
             className="border border-slate-200 py-1 pl-3 pr-6 w-1/2 focus:outline-0 rounded"
           />
-          <div className="search-btn absolute top-1/2 -translate-y-1/2 right-7">
+          <div className="search-btn absolute top-1/2 -translate-y-1/2 right-7 md:right-[4.5rem]">
             <span className="">
               <img
                 className="block w-4 h-4"
