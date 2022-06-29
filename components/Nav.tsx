@@ -34,7 +34,7 @@ const Nav: FC = () => {
           </p>
         </div>
         <div
-          className={`search-input order-3 relative md:flex  gap-4 ${
+          className={`search-input order-3 w-screen md:w-fit relative flex items-center justify-between px-6  gap-4 ${
             isMenuOpen ? "flex" : "hidden"
           }`}
         >
@@ -46,10 +46,10 @@ const Nav: FC = () => {
           <input
             type="search"
             placeholder="Search product"
-            className="border border-slate-200 py-1 pl-3 pr-6 focus:outline-0 rounded"
+            className="border border-slate-200 py-1 pl-3 pr-6 w-1/2 focus:outline-0 rounded"
           />
-          <div className="search-btn">
-            <span className="absolute right-6 top-[50%] -translate-y-[50%]">
+          <div className="search-btn absolute top-1/2 -translate-y-1/2 right-7">
+            <span className="">
               <img
                 className="block w-4 h-4"
                 src="/ios-search.svg"
