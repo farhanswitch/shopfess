@@ -27,7 +27,7 @@ const Home: NextPage<AppIndexProps> = ({ productData }) => {
           <div className="max-w-5xl mx-auto">
             <CarouselComp />
           </div>
-          <TopProducts listTopProducts={productData} />
+          <TopProducts title="Top Products" listTopProducts={productData} />
         </>
       </Layout>
     </>

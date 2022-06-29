@@ -5,7 +5,8 @@ import { CartItemType } from "../src/models/CartItem";
 
 const Nav: FC = () => {
   const router = useRouter();
-  const { cartItems, handleOpenDrawer } = useGlobalContext();
+  const { cartItems, handleOpenDrawer, searchQuery, setSearchQuery } =
+    useGlobalContext();
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((acc: number, item) => acc + item.amount, 0);
   const totalItems = useMemo(() => getTotalItems(cartItems), [cartItems]);
@@ -51,20 +52,32 @@ const Nav: FC = () => {
               Categories
             </span>
           </button>
-          <input
-            type="search"
-            placeholder="Search product"
-            className="border border-slate-200 py-1 pl-3 pr-6 w-1/2 focus:outline-0 rounded"
-          />
-          <div className="search-btn absolute top-1/2 -translate-y-1/2 right-7 md:right-[4.5rem]">
-            <span className="">
-              <img
-                className="block w-4 h-4"
-                src="/ios-search.svg"
-                alt="search"
-              />
-            </span>
-          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              router.push(`/search?query=${searchQuery}`);
+            }}
+          >
+            <input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              type="search"
+              placeholder="Search product"
+              className="border border-slate-200 py-1 pl-3 pr-6 w-3/4 focus:outline-0 rounded"
+            />
+            <div
+              onClick={() => router.push(`/search/query=${searchQuery}`)}
+              className="search-btn absolute top-1/2 -translate-y-1/2 right-[6.5rem] md:right-[6rem]"
+            >
+              <span className="">
+                <img
+                  className="block w-4 h-4"
+                  src="/ios-search.svg"
+                  alt="search"
+                />
+              </span>
+            </div>
+          </form>
         </div>
         <div
           className="button md:order-3 flex items-center relative pr-8 py-4"

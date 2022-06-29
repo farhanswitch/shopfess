@@ -19,7 +19,7 @@ type ProductPageProps = {
 
 const ProductsPage: NextPage<ProductPageProps> = ({ productsData }) => {
   return (
-    <Layout pageTitle="All Products">
+    <Layout pageTitle="Shopfess | Products">
       <section className="all-products max-w-5xl mx-auto pt-6">
         <div className="title px-4">
           <h2 className="text-xl capitalize">All Products</h2>
