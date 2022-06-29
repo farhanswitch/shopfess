@@ -63,11 +63,11 @@ const Nav: FC = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               type="search"
               placeholder="Search product"
-              className="border border-slate-200 py-1 pl-3 pr-6 w-3/4 focus:outline-0 rounded"
+              className="border border-slate-200 py-1 pl-3 pr-8 w-[90%] focus:outline-0 rounded"
             />
             <div
-              onClick={() => router.push(`/search/query=${searchQuery}`)}
-              className="search-btn absolute top-1/2 -translate-y-1/2 right-[6.5rem] md:right-[6rem]"
+              onClick={() => router.push(`/search?query=${searchQuery}`)}
+              className="search-btn absolute top-1/2 -translate-y-1/2 right-[3.6rem] md:right-[2rem]"
             >
               <span className="">
                 <img
