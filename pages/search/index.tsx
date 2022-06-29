@@ -24,7 +24,7 @@ const SearchPage: NextPage<SearchPageProps> = ({ products }) => {
   }
   const filteredProducts = products.filter((product) =>
     typeof query === "string"
-      ? product["title"].toLowerCase().includes(query)
+      ? product["title"].toLowerCase().includes(query.toLowerCase())
       : null
   );
 
