@@ -3,11 +3,16 @@
 - TailwindCSS
 - TypeScript
 - Context API
-[Public API  fakestoreapi] (https://fakestoreapi.com)
 - Axios
 
+
+[Public API  fakestoreapi] (https://fakestoreapi.com)
+
+
 ## Demo
+
 [Demo Website] (https://shopfess.farhanswitch.my.id)
 
-##Contact
-[Email] (mailto://farhan.muhammad11@programmer.net)
+## Contact
+
+[Email] <farhan.muhammad11@programmer.net>
