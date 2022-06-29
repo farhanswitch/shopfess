@@ -8,6 +8,8 @@ export type ContextStateType = {
   setIsDrawerOpen: Dispatch<SetStateAction<boolean>>;
   cartItems: [] | CartItemType[];
   setCartItems: Dispatch<SetStateAction<[] | CartItemType[]>>;
+  searchQuery: string;
+  setSearchQuery: Dispatch<SetStateAction<string>>;
   handleOpenDrawer: () => void;
   handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => void;
   handleRemoveFromCart: (id: number) => void;

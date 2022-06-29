@@ -9,6 +9,8 @@ const state = {
   setIsDrawerOpen: () => {},
   cartItems: [],
   setCartItems: () => {},
+  searchQuery: "",
+  setSearchQuery: () => {},
   handleOpenDrawer: () => {},
   handleAddToCart: (clickedItem: CartItemType, addAmount?: number) => {
     console.log(`${clickedItem}${addAmount}`);

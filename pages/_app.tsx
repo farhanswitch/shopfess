@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<[] | CartItemType[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const handleOpenDrawer = () => setIsDrawerOpen(!isDrawerOpen);
   const handleAddToCart = (
     clickedItem: CartItemType,
@@ -49,6 +50,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         setIsDrawerOpen,
         cartItems,
         setCartItems,
+        searchQuery,
+        setSearchQuery,
         handleOpenDrawer,
         handleAddToCart,
         handleRemoveFromCart,
