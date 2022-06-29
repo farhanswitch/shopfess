@@ -1,14 +1,12 @@
 import { FC } from "react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { CartItemType } from "../src/models/CartItem";
-import useGlobalContext from "../src/hooks/useGlobalContext";
 type ProductProps = {
   product: CartItemType;
 };
 const Product: FC<ProductProps> = ({ product }) => {
   const router = useRouter();
-  const { handleAddToCart } = useGlobalContext();
+
   return (
     <div
       onClick={() =>
@@ -16,7 +14,7 @@ const Product: FC<ProductProps> = ({ product }) => {
           `/product/${product["title"].split(" ")[0]}-${product["id"]}`
         )
       }
-      className="h-full pt-8 pb-14 relative"
+      className="h-full py-8 relative"
     >
       <div className="w-full">
         <img
@@ -30,12 +28,6 @@ const Product: FC<ProductProps> = ({ product }) => {
         <h3 className="text-slate-800 my-2">{product.title}</h3>
         <p className="text-blue-800 my-1">${product.price}</p>
       </div>
-      <button
-        onClick={() => handleAddToCart(product)}
-        className="bg-sky-600 hover:bg-sky-500 text-white w-4/5 block mt-8 mx-auto px-1 py-2 rounded absolute bottom-2 left-1/2 -translate-x-1/2"
-      >
-        Add To Cart
-      </button>
     </div>
   );
 };
