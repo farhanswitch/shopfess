@@ -21,8 +21,8 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
       <div className="product-detail-card max-w-5xl mx-auto overflow-hidden shadow-md py-10 px-6">
         <div className="title flex items-center justify-between px-3 mb-20">
           <h2 className="font-semibold text-md">Product Detail</h2>
-          <Link className="text-blue-800" href="/product">
-            All Products
+          <Link href="/product">
+            <span className="text-blue-800">All Products</span>
           </Link>
         </div>
         <div className="header-card flex flex-col sm:flex-row gap-6 max-h-[80vh] pb-6">
