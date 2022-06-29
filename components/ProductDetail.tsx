@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import Link from "next/link";
 import { CartItemType } from "../src/models/CartItem";
 import Layout from "../components/Layout";
 import useGlobalContext from "../src/hooks/useGlobalContext";
@@ -20,9 +21,9 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
       <div className="product-detail-card max-w-5xl mx-auto overflow-hidden shadow-md py-10 px-6">
         <div className="title flex items-center justify-between px-3 mb-20">
           <h2 className="font-semibold text-md">Product Detail</h2>
-          <a className="text-blue-800" href="/product">
+          <Link className="text-blue-800" href="/product">
             All Products
-          </a>
+          </Link>
         </div>
         <div className="header-card flex flex-col sm:flex-row gap-6 max-h-[80vh] pb-6">
           <img
